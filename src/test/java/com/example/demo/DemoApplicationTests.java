@@ -48,14 +48,13 @@ public class DemoApplicationTests {
 		//获取thymeleaf的html模板
 		String emailContent= templateEngine.process("mailTemplate", context);
 		mailService.sendHtmlMail(to,"这是thymeleaf模板邮件",emailContent);
-		mailService.sendAttachmentsMail(to, "主题：带附件的邮件", "有附件，请查收！", "C:\\Users\\yanju\\Desktop\\关于四高统计\\天地健康城健康管理数据统计报告\\天地健康城健康管理数据统计报告.xlsx");
 	}
 
 	@Test
 	public void sendAttachmentsMail() throws FileNotFoundException {
 		File file = new File("C:\\Users\\yanju\\Desktop\\关于四高统计\\天地健康城健康管理数据统计报告\\天地健康城健康管理数据统计报告.xlsx");
 		InputStream in = new FileInputStream(file);
-		mailService.sendMail("测试excel邮件",to,"nihao","天地健康城健康管理数据统计报告123.xlsx",in,null);
+		mailService.sendMail("测试excel邮件",to,"请注意查收附件！","附件.xlsx",in,null);
 	}
 
 	@Test
@@ -64,7 +63,7 @@ public class DemoApplicationTests {
 		mailService.sendInlineResourceMail(to,
 				"主题：嵌入静态资源的邮件",
 				"<html><body>这是有嵌入静态资源：<img src=\'cid:" + rscId + "\' ></body></html>",
-				"C:\\Users\\Xu\\Desktop\\csdn\\1.png",
+				"C:\\Users\\yanju\\Desktop\\壁纸\\aaa.jpg",
 				rscId);
 	}
 

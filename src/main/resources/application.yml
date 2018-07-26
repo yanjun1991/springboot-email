@@ -56,4 +56,4 @@ pagehelper:
   params: count=countSql
 #日志文件配置
 logging:
-  config: classpath:log4j2-spring.xml
+  config: classpath:log4j2-dev.xml

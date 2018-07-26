@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+
+<style>
+    table,table tr th, table tr td { border:1px solid #0094ff; }
+    table { width: 200px; min-height: 25px; line-height: 25px; text-align: center; border-collapse: collapse;}
+</style>
+<body xmlns:th="http://www.w3.org/1999/xhtml">
+
+<h1 th:text="${username}"></h1>
+<span th:text="${message}"></span>
+
+祝：开心！
+
+
+<table style="width: 300px;">
+    <tr style="background-color: green">
+        <th>编号</th>
+        <th>姓名</th>
+    </tr>
+    <tr th:each="item:${list}">
+        <th scope="row" th:text="${item.id}"></th>
+        <td th:text="${item.name}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
